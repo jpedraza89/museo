@@ -22,9 +22,9 @@ public class FirstFragment extends Fragment {
         return v;
     }
 
-    public static FirstFragment newInstance(String text) {
+    public static SecondFragment newInstance(String text) {
 
-        FirstFragment f = new FirstFragment();
+        SecondFragment f = new SecondFragment();
         Bundle b = new Bundle();
         b.putString("msg", text);
 
@@ -32,4 +32,5 @@ public class FirstFragment extends Fragment {
 
         return f;
     }
+
 }

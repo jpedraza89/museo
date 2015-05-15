@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.angelo.museo.ui.fragments.FirstFragment;
+import com.example.angelo.museo.ui.fragments.ListFragment;
 import com.example.angelo.museo.ui.fragments.SecondFragment;
 import com.example.angelo.museo.ui.fragments.ThirdFragment;
 
@@ -25,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+
+        getFragmentManager().beginTransaction()
+                .add(R.id.layout_fragment_container, ListFragment.getInstance(savedInstanceState))
+        .commit();
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
