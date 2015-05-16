@@ -1,15 +1,11 @@
 package com.example.angelo.museo;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.example.angelo.museo.ui.fragments.FirstFragment;
 import com.example.angelo.museo.ui.fragments.ListFragment;
@@ -28,8 +24,11 @@ public class MainActivity extends AppCompatActivity {
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
 
         getFragmentManager().beginTransaction()
-                .add(R.id.layout_fragment_container, ListFragment.getInstance(savedInstanceState))
+                .add(R.id.list_fragment, ListFragment.getInstance(savedInstanceState))
         .commit();
+
+
+
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
