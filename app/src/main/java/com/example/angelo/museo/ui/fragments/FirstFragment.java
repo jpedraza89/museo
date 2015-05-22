@@ -1,12 +1,15 @@
 package com.example.angelo.museo.ui.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.angelo.museo.MuseoActivity;
 import com.example.angelo.museo.R;
 
 
@@ -19,12 +22,23 @@ public class FirstFragment extends Fragment {
         TextView tv = (TextView) v.findViewById(R.id.tvFragFirst);
         tv.setText(getArguments().getString("msg"));
 
+        RelativeLayout rl = (RelativeLayout)v.findViewById(R.id.container);
+
+
+        rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent secondactivity = new Intent(getActivity(), MuseoActivity.class);
+                startActivity(secondactivity);
+            }
+        });
+
         return v;
     }
 
-    public static SecondFragment newInstance(String text) {
+    public static FirstFragment newInstance(String text) {
 
-        SecondFragment f = new SecondFragment();
+        FirstFragment f = new FirstFragment();
         Bundle b = new Bundle();
         b.putString("msg", text);
 

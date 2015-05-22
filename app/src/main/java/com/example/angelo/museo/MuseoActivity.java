@@ -1,36 +1,32 @@
 package com.example.angelo.museo;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.angelo.museo.ui.fragments.FirstFragment;
-import com.example.angelo.museo.ui.fragments.ListFragment;
 import com.example.angelo.museo.ui.fragments.SecondFragment;
 import com.example.angelo.museo.ui.fragments.ThirdFragment;
 
-
-public class MainActivity extends AppCompatActivity {
+public class MuseoActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_museo);
 
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
-
-        getFragmentManager().beginTransaction()
-                .add(R.id.list_fragment, ListFragment.getInstance(savedInstanceState))
-        .commit();
-
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
-
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -40,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             switch (pos) {
 
                 case 0:
-                    return FirstFragment.newInstance("FirstFragment, Instance 1");
+                    return FirstFragment.newInstance("Evento");
                 case 1:
                     return SecondFragment.newInstance("SecondFragment, Instance 1");
                 case 2:
@@ -58,6 +54,5 @@ public class MainActivity extends AppCompatActivity {
         public int getCount() {
             return 5;
         }
-
     }
 }
