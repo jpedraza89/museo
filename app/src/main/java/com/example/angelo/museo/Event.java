@@ -11,12 +11,14 @@ public class Event {
     private String nombre;
     private String lugar;
     private String fechaInicio;
+    private String urlImg;
 
     //Constructor
-    public Event(String nombre, String lugar, String fechaInicio) {
+    public Event(String nombre, String lugar, String fechaInicio, String urlImg) {
         this.nombre = nombre;
         this.lugar = lugar;
         this.fechaInicio = fechaInicio;
+        this.urlImg = urlImg;
     }
 
     public String getNombre() {
@@ -29,5 +31,9 @@ public class Event {
 
     public String getFechaInicio() {
         return fechaInicio;
+    }
+
+    public String getUrlImg() {
+        return urlImg;
     }
 }

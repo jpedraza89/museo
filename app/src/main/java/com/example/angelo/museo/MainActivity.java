@@ -128,15 +128,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public Event parseSecondEvent(JSONArray eventList) throws JSONException {
-        JSONObject secondEvent = eventList.getJSONObject(1);
-
-        String nombre = secondEvent.getString("nombre");
-        String lugar = secondEvent.getString("lugar");
-        String fecha = secondEvent.getString("hora_inicio");
-
-        return new Event(nombre, lugar, fecha);
-    }
 
     public ArrayList<Event> parseEvents(JSONArray eventList) throws JSONException {
 
@@ -148,8 +139,9 @@ public class MainActivity extends AppCompatActivity {
             String nombre = jsonEvents.getString("nombre");
             String lugar = jsonEvents.getString("lugar");
             String fecha = jsonEvents.getString("hora_inicio");
+            String urlImg = jsonEvents.getString("imagen");
 
-            Event event = new Event(nombre, lugar, fecha);
+            Event event = new Event(nombre, lugar, fecha, urlImg);
 
             arrayListEvent.add(event);
         }
