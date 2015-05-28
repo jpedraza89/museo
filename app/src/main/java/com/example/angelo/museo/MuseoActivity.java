@@ -2,6 +2,7 @@ package com.example.angelo.museo;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -11,7 +12,7 @@ import com.example.angelo.museo.ui.fragments.FirstFragment;
 import com.example.angelo.museo.ui.fragments.SecondFragment;
 import com.example.angelo.museo.ui.fragments.ThirdFragment;
 
-public class MuseoActivity extends AppCompatActivity {
+public class MuseoActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
