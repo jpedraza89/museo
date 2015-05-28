@@ -14,6 +14,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.example.angelo.museo.model.Event;
 import com.example.angelo.museo.ui.fragments.FirstFragment;
 import com.example.angelo.museo.ui.fragments.ListFragment;
 import com.example.angelo.museo.ui.fragments.SecondFragment;
@@ -76,38 +77,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        StringRequest eventarioRequest = new StringRequest(Request.Method.GET,
-                "http://eventario.mx/eventos.json",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray eventList = new JSONArray(response);
-                            ArrayList<Event> eventArrayList = parseEvents(eventList);
-
-                            for (int i = 0; i < eventArrayList.size(); i++) {
-                                Log.d(LOG_TAG, eventArrayList.get(i).getNombre() + "\n" + eventArrayList.get(i).getLugar() + "\n" + eventArrayList.get(i).getFechaInicio());
-                            }
-                        } catch (JSONException e) {
-
-                            e.printStackTrace();
-                        }
-                    }
-                }
-                , new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-                volleyError.printStackTrace();
-            }
-        });
-
-        ((AppController) getApplicationContext())
-                .addToRequestQueue(eventarioRequest);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -129,23 +98,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public ArrayList<Event> parseEvents(JSONArray eventList) throws JSONException {
-
-        ArrayList<Event> arrayListEvent = new ArrayList<>();
-
-        for (int i = 0; i < eventList.length(); i++) {
-            JSONObject jsonEvents = eventList.getJSONObject(i);
-
-            String nombre = jsonEvents.getString("nombre");
-            String lugar = jsonEvents.getString("lugar");
-            String fecha = jsonEvents.getString("hora_inicio");
-            String urlImg = jsonEvents.getString("imagen");
-
-            Event event = new Event(nombre, lugar, fecha, urlImg);
-
-            arrayListEvent.add(event);
-        }
-
-        return arrayListEvent;
-    }
 }

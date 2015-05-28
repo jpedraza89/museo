@@ -1,4 +1,4 @@
-package com.example.angelo.museo;
+package com.example.angelo.museo.model;
 
 /**
  * Created by Antonio on 20/05/2015.
