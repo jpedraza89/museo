@@ -74,8 +74,8 @@ public class EventAdapter extends BaseAdapter{
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
+    public Event getItem(int position) {
+        return events.get(position);
     }
 
     @Override

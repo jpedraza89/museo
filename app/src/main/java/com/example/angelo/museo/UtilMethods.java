@@ -24,8 +24,11 @@ public class UtilMethods {
             String lugar = jsonEvents.getString("lugar");
             String fecha = jsonEvents.getString("hora_inicio");
             String urlImg = jsonEvents.getString("imagen");
+            String longitud = jsonEvents.getString("longitud");
+            String latitud = jsonEvents.getString("latitud");
+            String direccion = jsonEvents.getString("direccion");
 
-            Event event = new Event(nombre, lugar, fecha, urlImg);
+            Event event = new Event(nombre, lugar, fecha, urlImg, longitud, latitud, direccion);
 
             arrayListEvent.add(event);
         }

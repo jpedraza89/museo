@@ -12,28 +12,32 @@ public class Event {
     private String lugar;
     private String fechaInicio;
     private String urlImg;
+    private String latitud;
+    private String longitud;
+    private String direccion;
 
     //Constructor
-    public Event(String nombre, String lugar, String fechaInicio, String urlImg) {
+    public Event(String nombre, String lugar, String fechaInicio, String urlImg, String latitud, String longitud, String direccion) {
         this.nombre = nombre;
         this.lugar = lugar;
         this.fechaInicio = fechaInicio;
         this.urlImg = urlImg;
+        this.longitud = longitud;
+        this.latitud = latitud;
+        this.direccion = direccion;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() {return nombre;}
 
-    public String getLugar() {
-        return lugar;
-    }
+    public String getUrlImg() {return urlImg;}
 
-    public String getFechaInicio() {
-        return fechaInicio;
-    }
+    public String getLugar() {return lugar;}
 
-    public String getUrlImg() {
-        return urlImg;
-    }
+    public String getFechaInicio() {return fechaInicio;}
+
+    public String getLongitud() {return longitud;}
+
+    public String getLatitud() {return latitud;}
+
+    public String getDireccion() {return direccion;}
 }

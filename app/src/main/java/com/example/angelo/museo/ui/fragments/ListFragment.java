@@ -45,8 +45,11 @@ public class ListFragment extends Fragment {
         gridEvents.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(getActivity(), "" + position,
-                        Toast.LENGTH_SHORT).show();
+                EventAdapter adapter = (EventAdapter) gridEvents.getAdapter();
+
+                Event eventClicked = adapter.getItem(position);
+
+                Toast.makeText(getActivity(), eventClicked.getUrlImg(), Toast.LENGTH_SHORT).show();
             }});
 
         return v;

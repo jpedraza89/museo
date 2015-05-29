@@ -12,7 +12,7 @@ import com.example.angelo.museo.ui.fragments.FirstFragment;
 import com.example.angelo.museo.ui.fragments.SecondFragment;
 import com.example.angelo.museo.ui.fragments.ThirdFragment;
 
-public class MuseoActivity extends FragmentActivity {
+public class MuseoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
