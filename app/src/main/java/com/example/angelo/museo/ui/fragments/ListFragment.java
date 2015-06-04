@@ -1,6 +1,7 @@
 package com.example.angelo.museo.ui.fragments;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.angelo.museo.AppController;
+import com.example.angelo.museo.MuseoActivity;
 import com.example.angelo.museo.R;
 import com.example.angelo.museo.UtilMethods;
 import com.example.angelo.museo.adapter.EventAdapter;
@@ -48,6 +50,8 @@ public class ListFragment extends Fragment {
                 EventAdapter adapter = (EventAdapter) gridEvents.getAdapter();
 
                 Event eventClicked = adapter.getItem(position);
+                Intent secondactivity = new Intent(getActivity(), MuseoActivity.class);
+                startActivity(secondactivity);
 
                 Toast.makeText(getActivity(), eventClicked.getUrlImg(), Toast.LENGTH_SHORT).show();
             }});
