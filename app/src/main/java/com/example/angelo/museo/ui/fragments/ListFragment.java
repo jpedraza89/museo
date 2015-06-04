@@ -3,7 +3,6 @@ package com.example.angelo.museo.ui.fragments;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,9 @@ import java.util.ArrayList;
 /**
  * Created by angelo on 14/05/15.
  */
-public class ListFragment extends Fragment {
+public class
+
+        ListFragment extends Fragment {
 
     GridView gridEvents;
 
