@@ -1,16 +1,6 @@
 package com.example.angelo.museo;
-
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-
-import com.example.angelo.museo.ui.fragments.FirstFragment;
-import com.example.angelo.museo.ui.fragments.SecondFragment;
-import com.example.angelo.museo.ui.fragments.ThirdFragment;
 
 public class MuseoActivity extends AppCompatActivity {
 
@@ -18,6 +8,20 @@ public class MuseoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_museo);
+
+        String newString;
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                newString= null;
+            } else {
+                newString= extras.getString("Nombre");
+            }
+        } else {
+            newString= (String) savedInstanceState.getSerializable("STRING_I_NEED");
+        }
+
+
     }
 
 }

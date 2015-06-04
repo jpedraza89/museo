@@ -25,5 +25,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:22.1.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'me.neavo:volley:2014.12.09'
-    compile 'com.google.android.gms:play-services:7.5.0'
+    compile 'com.google.android.gms:play-services:7.3.0'
 }

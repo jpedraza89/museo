@@ -30,9 +30,12 @@ import java.util.ArrayList;
 /**
  * Created by angelo on 14/05/15.
  */
-public class
+public class ListFragment extends Fragment {
 
-        ListFragment extends Fragment {
+
+    private static String Title = "title";
+    private static String bitmap = "thumbnailUrl";
+
 
     GridView gridEvents;
 
@@ -51,10 +54,28 @@ public class
                 EventAdapter adapter = (EventAdapter) gridEvents.getAdapter();
 
                 Event eventClicked = adapter.getItem(position);
-                Intent secondactivity = new Intent(getActivity(), MuseoActivity.class);
-                startActivity(secondactivity);
+                Intent intent =
+                        new Intent(getActivity(), MuseoActivity.class);
 
-                Toast.makeText(getActivity(), eventClicked.getUrlImg(), Toast.LENGTH_SHORT).show();
+                String NombreEvento = "Nombre evento";
+                String UrlImgEvento = "UrlImg evento";
+                String LugarEvento = "Lugar evento";
+                String FechaInicioEvento = "FechaInicio Evento";
+                String LongitudEvento = "Longitud Evento";
+                String LatitudEvento = "Latitud Evento";
+                String DireccionEvento = "Direccion evento";
+
+                intent.putExtra("nombre", NombreEvento);
+                intent.putExtra("urlImg", UrlImgEvento);
+                intent.putExtra("lugar", LugarEvento);
+                intent.putExtra("fechaInicio", FechaInicioEvento);
+                intent.putExtra("longitud", LongitudEvento);
+                intent.putExtra("latitud", LatitudEvento);
+                intent.putExtra("direccion", DireccionEvento);
+
+                startActivity(intent);
+
+                Toast.makeText(getActivity(), eventClicked.getNombre(), Toast.LENGTH_SHORT).show();
             }});
 
         return v;
