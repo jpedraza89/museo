@@ -54,28 +54,19 @@ public class ListFragment extends Fragment {
                 EventAdapter adapter = (EventAdapter) gridEvents.getAdapter();
 
                 Event eventClicked = adapter.getItem(position);
-                Intent intent =
-                        new Intent(getActivity(), MuseoActivity.class);
+                Intent intent = new Intent(getActivity(), MuseoActivity.class);
 
-                String NombreEvento = "Nombre evento";
-                String UrlImgEvento = "UrlImg evento";
-                String LugarEvento = "Lugar evento";
-                String FechaInicioEvento = "FechaInicio Evento";
-                String LongitudEvento = "Longitud Evento";
-                String LatitudEvento = "Latitud Evento";
-                String DireccionEvento = "Direccion evento";
 
-                intent.putExtra("nombre", NombreEvento);
-                intent.putExtra("urlImg", UrlImgEvento);
-                intent.putExtra("lugar", LugarEvento);
-                intent.putExtra("fechaInicio", FechaInicioEvento);
-                intent.putExtra("longitud", LongitudEvento);
-                intent.putExtra("latitud", LatitudEvento);
-                intent.putExtra("direccion", DireccionEvento);
-
+                intent.putExtra("nombre", eventClicked.getNombre());
+                intent.putExtra("urlImg", eventClicked.getUrlImg());
+                intent.putExtra("fechaInicio", eventClicked.getFechaInicio());
+                intent.putExtra("longitud", eventClicked.getLongitud());
+                intent.putExtra("latitud", eventClicked.getLatitud());
+                intent.putExtra("direccion", eventClicked.getDireccion());
+                intent.putExtra("lugar", eventClicked.getLugar());
                 startActivity(intent);
 
-                Toast.makeText(getActivity(), eventClicked.getNombre(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), eventClicked.getUrlImg(), Toast.LENGTH_SHORT).show();
             }});
 
         return v;
