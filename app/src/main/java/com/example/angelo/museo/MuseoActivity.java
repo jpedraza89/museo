@@ -63,6 +63,7 @@ public class MuseoActivity extends AppCompatActivity {
         String LongitudEvento = getIntent().getStringExtra("longitud");
         String LatitudEvento = getIntent().getStringExtra("latitud");
 
+
         textEvent.setText(NombreEvento);
         textEventLugar.setText("\t"+Lugar+"\n\n\n");
         textEventDireccion.setText(DireccionEvento+"\n\n\n");
@@ -72,6 +73,9 @@ public class MuseoActivity extends AppCompatActivity {
                 .load(UrlImgEvento)
                 .fit()
                 .into(eventImg);
+
+
+
     }
 
     public Intent getDefaultIntent() {
