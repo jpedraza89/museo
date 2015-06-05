@@ -33,10 +33,6 @@ import java.util.ArrayList;
 public class ListFragment extends Fragment {
 
 
-    private static String Title = "title";
-    private static String bitmap = "thumbnailUrl";
-
-
     GridView gridEvents;
 
     public ListFragment() {
