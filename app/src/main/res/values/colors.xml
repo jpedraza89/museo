@@ -11,4 +11,7 @@
     <color name="divider">#b6b6b6</color>
     <color name="text_primary_black">#212121</color>
     <color name="text_secondary_black">#727272</color>
+    <color name="text_settings_black">#727272</color>
+    <color name="black">#424242</color>
+
 </resources>

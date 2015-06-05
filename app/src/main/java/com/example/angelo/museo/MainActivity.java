@@ -6,25 +6,14 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.example.angelo.museo.model.Event;
 import com.example.angelo.museo.ui.fragments.FirstFragment;
 import com.example.angelo.museo.ui.fragments.ListFragment;
 import com.example.angelo.museo.ui.fragments.SecondFragment;
 import com.example.angelo.museo.ui.fragments.ThirdFragment;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
 
@@ -45,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         .commit();
 
     }
+
+
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
 
@@ -81,9 +73,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        MenuInflater inflater= getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        /**MenuItem shareItem = menu.findItem(R.id.action_share);
+        ShareActionProvider mShareActionProvider = (ShareActionProvider)
+                MenuItemCompat.getActionProvider(shareItem);
+        mShareActionProvider.setShareIntent(getDefaultIntent());*/
+
+
+
+        return super.onCreateOptionsMenu(menu);
+
+           }
+
+   /** private Intent getDefaultIntent() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("image/*");
+        return intent;
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

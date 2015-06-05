@@ -9,4 +9,7 @@
     <string name="title_activity_museo">Evento</string>
     <string name="title_activity_map_f">MapF</string>
     <string name="hola" />
+    <string name="Search">Search</string>
+    <string name="Refresh">Refresh</string>
+    <string name="share">Share</string>
 </resources>
