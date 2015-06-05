@@ -60,13 +60,14 @@ public class ListFragment extends Fragment {
                 intent.putExtra("nombre", eventClicked.getNombre());
                 intent.putExtra("urlImg", eventClicked.getUrlImg());
                 intent.putExtra("fechaInicio", eventClicked.getFechaInicio());
+                intent.putExtra("fechaFin", eventClicked.getFechaFin());
                 intent.putExtra("longitud", eventClicked.getLongitud());
                 intent.putExtra("latitud", eventClicked.getLatitud());
                 intent.putExtra("direccion", eventClicked.getDireccion());
                 intent.putExtra("lugar", eventClicked.getLugar());
                 startActivity(intent);
 
-                Toast.makeText(getActivity(), eventClicked.getUrlImg(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), eventClicked.getUrlImg(), Toast.LENGTH_SHORT).show();
             }});
 
         return v;

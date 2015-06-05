@@ -16,27 +16,34 @@
         <ImageView
             android:id="@+id/image_event"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@color/primary"
-
-             />
-
+            android:layout_height="150dp"/>
 
 
         <TextView
             android:id="@+id/event_text"
+            android:layout_below="@id/image_event"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="270dp"
-            android:layout_below="@id/image_event"
-            android:background="@color/material_blue_grey_800"/>
+            android:layout_height="70dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/event_text_details"
+            android:layout_below="@id/event_text"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:textSize="14dp"
+            android:padding="10dp"/>
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/map"
             class="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_below="@id/event_text"
+            android:layout_below="@id/event_text_details"
             android:padding="10dp"
             android:layout_marginTop="10dp"
             android:background="@color/white"/>

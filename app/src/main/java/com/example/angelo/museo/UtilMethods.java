@@ -22,13 +22,14 @@ public class UtilMethods {
 
             String nombre = jsonEvents.getString("nombre");
             String lugar = jsonEvents.getString("lugar");
-            String fecha = jsonEvents.getString("hora_inicio");
+            String fechaInicio = jsonEvents.getString("fecha_inicio");
+            String fechaFin = jsonEvents.getString("fecha_fin");
             String urlImg = jsonEvents.getString("imagen");
             String longitud = jsonEvents.getString("longitud");
             String latitud = jsonEvents.getString("latitud");
             String direccion = jsonEvents.getString("direccion");
 
-            Event event = new Event(nombre, lugar, fecha, urlImg, longitud, latitud, direccion);
+            Event event = new Event(nombre, lugar, fechaInicio, urlImg, longitud, latitud, direccion, fechaFin);
 
             arrayListEvent.add(event);
         }

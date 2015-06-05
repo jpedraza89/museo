@@ -14,29 +14,26 @@ public class MuseoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_museo);
         ImageView eventImg = (ImageView) findViewById(R.id.image_event);
         TextView textEvent = (TextView) findViewById(R.id.event_text);
+        TextView textEventDetail = (TextView) findViewById(R.id.event_text_details);
 
-
+        String UrlImgEvento = getIntent().getStringExtra("urlImg");
         String NombreEvento = getIntent().getStringExtra("nombre");
         String Lugar = getIntent().getStringExtra("lugar");
-        String UrlImgEvento = getIntent().getStringExtra("urlImg");
-        String LugarEvento = getIntent().getStringExtra("direccion");
-        String FechaInicioEvento = getIntent().getStringExtra("fechainicio");
+        String DireccionEvento = getIntent().getStringExtra("direccion");
+        String FechaInicioEvento = getIntent().getStringExtra("fechaInicio");
+        String FechaFinEvento = getIntent().getStringExtra("fechaFin");
         String LongitudEvento = getIntent().getStringExtra("longitud");
         String LatitudEvento = getIntent().getStringExtra("latitud");
-        String DireccionEvento = getIntent().getStringExtra("DireccionEvento");
         String newString;
 
-
-
         textEvent.setText(NombreEvento);
+        textEventDetail.setText("Lugar : "+Lugar+"\n\n\n"
+                +"Direccion : "+DireccionEvento+"\n\n\n"
+                +"Desde : " +FechaInicioEvento +"\t\t\t\tHasta : " +FechaFinEvento);
+
         Picasso.with(this)
                 .load(UrlImgEvento)
                 .fit()
                 .into(eventImg);
-
-
     }
-
-
-
 }

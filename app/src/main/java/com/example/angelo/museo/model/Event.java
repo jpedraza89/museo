@@ -11,16 +11,18 @@ public class Event {
     private String nombre;
     private String lugar;
     private String fechaInicio;
+    private String fechaFin;
     private String urlImg;
     private String latitud;
     private String longitud;
     private String direccion;
 
     //Constructor
-    public Event(String nombre, String lugar, String fechaInicio, String urlImg, String latitud, String longitud, String direccion) {
+    public Event(String nombre, String lugar, String fechaInicio, String urlImg, String latitud, String longitud, String direccion, String fechaFin) {
         this.nombre = nombre;
         this.lugar = lugar;
         this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
         this.urlImg = urlImg;
         this.longitud = longitud;
         this.latitud = latitud;
@@ -34,6 +36,8 @@ public class Event {
     public String getLugar() {return lugar;}
 
     public String getFechaInicio() {return fechaInicio;}
+
+    public String getFechaFin() {return fechaFin;}
 
     public String getLongitud() {return longitud;}
 
